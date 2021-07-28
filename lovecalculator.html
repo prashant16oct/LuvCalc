@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-image:url("http://vilee.fi/eng/wp-content/uploads/2020/11/whatislove-960x640-1.jpg") ;
+            background-size: cover;
+            background-repeat:no-repeat ;
+        }
+        div{
+            color:white;
+            position: absolute;
+            top:250px;
+            width:40%;
+            left:31.5%;
+            }
+        .namearea{
+            font-size: larger;
+            border: whitesmoke;
+            text-align: center;
+            border-radius: 5px;
+            width:9rem;
+            height:2rem;
+        }
+        .namearea:focus{
+            outline-color:rgb(5, 199, 37);
+            border-width: 5px;
+            border: chartreuse;
+        }
+
+        .narea{
+            font-size: larger;
+            border: whitesmoke;
+            text-align: center;
+            border-radius: 5px;
+            width:7rem;
+            height:2rem;
+        }
+
+        .calcbutton{
+            border-radius: 5px;
+            width:8rem;
+            height:2rem;
+            border:none;
+            background-color:rgb(6, 180, 6);
+            font-weight: bold;
+            border:3px solid darkgreen;
+            color:white ;
+        }
+
+        .calcbutton:hover{
+            background-color: rgb(6, 146, 6);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <div style="text-align: center;">
+        <form>
+        <h1>Love calculator</h1>
+        <input class="namearea" type="text" id="yourname" placeholder="Your Name" >
+        <span> + </span>
+        <input class="namearea" type="text" id="lovename" placeholder="Love Name" ><br><br><br>
+        <input class="calcbutton" type="button" onclick="calculate()" value="Calculate Love %"><br><br><br>
+        <input class="narea" type="text" id="result">
+    </form><br>
+
+    </div>
+</center>
+
+
+    <script>
+        function calculate(){
+
+        var yourname= document.getElementById("yourname").value;
+        var lovename= document.getElementById("lovename").value;
+         
+//validation for names
+        
+        if(yourname=="" || lovename==""){
+            alert("Please enter both the names.")
+        }
+        else if(yourname.length <=2 || lovename.length<=2){
+            alert("Name should not be less than 3 letters.")
+        }
+        else if(!isNaN(yourname) || !isNaN(lovename)){
+            alert("Name cannot be a number.")
+        }
+        else{
+            var cal= Math.floor(Math.random()*101);
+            document.getElementById("result").value= cal + " %";
+        }
+        }
+    </script>
+</body>
+</html>
